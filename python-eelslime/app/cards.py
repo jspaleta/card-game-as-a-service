@@ -1,4 +1,5 @@
-from random_word import RandomWords
+try: from random_word import RandomWords
+except: RandomWords = False
 try: from .words import defaults as default_words
 except: from words import defaults as default_words
 try: from .words import personas as default_personas
