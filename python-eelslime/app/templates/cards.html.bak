@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Cards</h1>
+    <form action="" method="post" novalidate>
+        {{ form.csrf_token }}
+	{{ form.name }}
+	{{ form.hidden_tag() }}
+    	<div><p>
+	<table style="width: 100%">
+	<colgroup>
+       	<col span="1"  style="text-align: right; width: 10%;">
+       	<col span="1"  style="text-align: right; width: 10%;">
+       	<col span="1"  style="text-align: left; width: 100%;">
+    	</colgroup>
+	 <tr>
+	 <td></td>
+	 <td>Discard</td>
+	 <td>Word</td>
+	 </tr>
+	{% for i in range(form.discard_list|length) %}
+  	<tr>
+		<td>{{ form.word_list[i].w() }}</td>
+		<td>{{ form.discard_list[i].d() }}</td>
+		<td>{{ form.word_list[i].w.value }}</td>
+  	</tr>
+    	{% endfor %}
+        </table>
+	</p></div>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

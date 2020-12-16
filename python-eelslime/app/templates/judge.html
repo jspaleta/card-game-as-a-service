@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Choose a persona</h1>
+    <form action="" method="post" novalidate>
+        {{ form.csrf_token }}
+	{{ form.name }}
+	{{ form.hidden_tag() }}
+    	<div><p>
+	<table style="width: 100%">
+	<colgroup>
+       	<col span="1"  style="text-align: right; width: 10%;">
+       	<col span="1"  style="text-align: right; width: 10%;">
+       	<col span="1"  style="text-align: left; width: 100%;">
+    	</colgroup>
+	 <tr>
+	 <td>Persona 1</td>
+	 <td>Persona 2</td>
+	 </tr>
+  	<tr>
+		<td>{{ form.persona0(value=judge[0]) }}</td>
+		<td>{{ form.persona1(value=judge[1]) }}</td>
+  	</tr>
+        </table>
+	</p></div>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

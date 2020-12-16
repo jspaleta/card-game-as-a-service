@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Cards</h1>
+    <form action="" method="post" novalidate>
+        {{ form.csrf_token }}
+	{{ form.name }}
+	{{ form.hidden_tag() }}
+    	<div><p>
+	<table style="width: 100%">
+	<colgroup>
+       	<col span="1"  style="text-align: right; width: 10%;">
+       	<col span="1"  style="text-align: right; width: 10%;">
+       	<col span="1"  style="text-align: left; width: 100%;">
+    	</colgroup>
+	 <tr>
+	 <td>Word</td>
+	 <td>Discard</td>
+	 </tr>
+  	<tr>
+		<td>{{ form.card0(value=cards[0]) }}</td>
+		<td>{{ form.discard0() }}</td>
+  	</tr>
+  	<tr>
+		<td>{{ form.card1(value=cards[1]) }}</td>
+		<td>{{ form.discard1() }}</td>
+  	</tr>
+  	<tr>
+		<td>{{ form.card2(value=cards[2]) }}</td>
+		<td>{{ form.discard2() }}</td>
+  	</tr>
+  	<tr>
+		<td>{{ form.card3(value=cards[3]) }}</td>
+		<td>{{ form.discard3() }}</td>
+  	</tr>
+  	<tr>
+		<td>{{ form.card4(value=cards[4] ) }}</td>
+		<td>{{ form.discard4() }}</td>
+  	</tr>
+  	<tr>
+		<td>{{ form.card5(value=cards[5] ) }}</td>
+		<td>{{ form.discard5() }}</td>
+  	</tr>
+  	<tr>
+		<td>{{ form.card6(value=cards[6] ) }}</td>
+		<td>{{ form.discard6() }}</td>
+  	</tr>
+        </table>
+	</p></div>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
